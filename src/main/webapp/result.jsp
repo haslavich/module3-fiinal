@@ -18,4 +18,5 @@
 <p>ID сессии: ${pageContext.session.id}</p>
 <p>Время создания: ${pageContext.session.creationTime}</p>
 </body>
+
 </html>

@@ -1,18 +1,19 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-<title>HeloQuest</title>
+<title>HeloQuest (II) начало</title>
 </head>
 <body>
-<h1>Добро пожаловать на борт!</h1>
-<p>Вы стоите в космическом порту. Принять вызов?</p>
-<% if(request.getAttribute("message")!=null) { %>
-<p style=color:red;><%=request.getAttribute("message")%></p>
-<% }%>
-<form action="game" method="post">
-<input type="radio" name="answer" value="accept"> Принять вызов<br>
-<input type="radio" name="answer" value="decline"> Отклонить вызов<br>
-<input type="submit" value="Ответить">
+<h2>Пролог</h2>
+<p>Текст предистории</p>
+<p>Как Ваше имя?</p>
+<form action="start" method ="post">
+     <label for="playerName">"Представтесь, командир:"</label><br>
+     <input type="text" id="playerName" name="playerName"
+                placeholder="Введите Ваше имя" required
+                value="${sessionScope.playername !=null ? sessionScope.playername : ''}"><br><br>
+                <button type="submit">Начать приключение</button>
 </form>
 </body>
 </html>
