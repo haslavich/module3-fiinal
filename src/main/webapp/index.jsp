@@ -12,7 +12,7 @@
      <label for="playerName">"Представтесь, командир:"</label><br>
      <input type="text" id="playerName" name="playerName"
                 placeholder="Введите Ваше имя" required
-                value="${sessionScope.playername !=null ? sessionScope.playername : ''}"><br><br>
+                value="${sessionScope.playerName !=null ? sessionScope.playerName : ''}"><br><br>
                 <button type="submit">Начать приключение</button>
 </form>
 </body>

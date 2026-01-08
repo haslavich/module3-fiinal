@@ -36,7 +36,7 @@
     </c:when>
 
     <c:otherwise>
-        <h3>${step.text}</h3>
+        <h4>${step.text}</h4>
         <p>
             <a href="game?step=start">Играть снова</a> |
             <a href="start">Начать сначала</a>
@@ -49,6 +49,7 @@
 <div>
     <p>ID сессии: ${pageContext.session.id}</p>
     <p>Текущий шаг: ${step.id}</p>
+    <p>Карты на столе: ${step.cardsOnTable}</p>
 </div>
 </body>
 </html>

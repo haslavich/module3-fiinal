@@ -9,18 +9,21 @@ public class QuestStep {
     private String option2;
     private String nextStepId1;
     private String nextStepId2;
+    private String cardsOnTable;
 
     public QuestStep() {
 
+
     }
 
-    public QuestStep(String id, String text, String option1, String option2, String nextStepId1, String nextStepId2) {
+    public QuestStep(String id, String text, String option1, String option2, String nextStepId1, String nextStepId2, String cardsOnTable) {
         this.id = id;
         this.text = text;
         this.option1 = option1;
         this.option2 = option2;
         this.nextStepId1 = nextStepId1;
         this.nextStepId2 = nextStepId2;
+        this.cardsOnTable=cardsOnTable;
     }
 
     public String getId() {
@@ -45,6 +48,14 @@ public class QuestStep {
 
     public void setOption1(String option1) {
         this.option1 = option1;
+    }
+
+    public String getCardsOnTable() {
+        return cardsOnTable;
+    }
+
+    public void setCardsOnTable(String cardsOnTable) {
+        this.cardsOnTable = cardsOnTable;
     }
 
     public String getOption2() {

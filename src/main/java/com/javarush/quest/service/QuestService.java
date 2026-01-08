@@ -1,12 +1,16 @@
 package com.javarush.quest.service;
 
 import com.javarush.quest.model.QuestStep;
+import com.javarush.quest.model.QuickCard;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class QuestService {
     private final Map<String, QuestStep> steps=new HashMap<>();
+    private final List<QuickCard> cards=new ArrayList<>();
 
     public QuestService() {
         initSteps();
@@ -14,65 +18,61 @@ public class QuestService {
     private void initSteps() {
         steps.put("start",new QuestStep(
                 "start",
-                "Ты потерял память. Принять вызов НЛО",
-                "Принять вызов",
-                "Отклонить вызов",
-                "bridge",
-                "lose1"
+                "Cыграем в Покер?",
+                "Конечно, поехали!",
+                "Спасибо, воздержусь",
+                "2Card",
+                "lose",null
         ));
-        // 2 шаг
-        steps.put("bridge",new QuestStep(
-                "bridge",
-                "Ты принял вызов. Поднимаешься на мостик к капитану?",
-                "Подняться на мостик",
-                "Отказаться",
-                "captain",
-                "lose2"
+        // 3 карты на столе:
+        cards.add(new QuickCard());
+        cards.add(new QuickCard());
+        cards.add(new QuickCard());
+        steps.put("2Card",new QuestStep(
+                "2Card",
+                "Итак, две карты на столе, ставки сделаны!",
+                "Уравниваем ставку, смотрим следующую карту",
+                "Пас, выхожу из игры!",
+                "3Card",
+                "lose",cards.toString()
         ));
-        // 3 шаг
-        steps.put("captain",new QuestStep(
-                "captain",
-                "Ты поднялся на мостик. Ты кто?",
-                "Рассказать правду о себе",
-                "Солгать о себе",
-                "win",
-                "lose3"
+        // 4 карты на столе
+        cards.add(new QuickCard());
+        steps.put("3Card",new QuestStep(
+                "3Card",
+                "Три карты на столе, ставки сделаны!",
+                "Уравниваем ставку, смотрим следующую карту",
+                "Пас, выхожу из игры!",
+                "4Card",
+                "lose",cards.toString()
         ));
-        // победа
-        steps.put("win",new QuestStep(
-                "win",
-                "Победа!",
+        // 5 карт на столе
+        cards.add(new QuickCard());
+        steps.put("4Card",new QuestStep(
+                "4Card",
+                "Четыре карты на столе, ставки сделаны!",
+                "Уравниваем ставку, смотрим следующую карту",
+                "Пас, выхожу из игры!",
+                "End game",
+                "lose",cards.toString()
+        ));
+        // Завершение игры
+        steps.put("End game",new QuestStep(
+                "End game",
+                "Все карты на столе-вскрываемся!!",
                 null,
                 null,
                 null,
-                null
+                null,null
         ));
         // поражение
-        steps.put("lose1",new QuestStep(
-                "lose1",
-                "Поражение!",
+        steps.put("lose",new QuestStep(
+                "lose",
+                "Ты вышел из игры!",
                 null,
                 null,
                 null,
-                null
-        ));
-        // ты не пошел на переговоры
-        steps.put("lose2",new QuestStep(
-                "lose2",
-                "Ты не пошел на переговоры. Поражение!",
-                null,
-                null,
-                null,
-                null
-        ));
-        // твоя ложь разоблачена
-        steps.put("lose3",new QuestStep(
-                "lose3",
-                "Твоя ложь разоблачена. Поражение!",
-                null,
-                null,
-                null,
-                null
+                null,null
         ));
     }
     public QuestStep getStep (String id) {
