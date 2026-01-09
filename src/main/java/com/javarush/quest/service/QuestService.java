@@ -30,7 +30,7 @@ public class QuestService {
         cards.add(new QuickCard());
         steps.put("2Card",new QuestStep(
                 "2Card",
-                "Итак, две карты на столе, ставки сделаны!",
+                "Итак, три карты на столе, ставки сделаны!",
                 "Уравниваем ставку, смотрим следующую карту",
                 "Пас, выхожу из игры!",
                 "3Card",
@@ -40,7 +40,7 @@ public class QuestService {
         cards.add(new QuickCard());
         steps.put("3Card",new QuestStep(
                 "3Card",
-                "Три карты на столе, ставки сделаны!",
+                "Четыре карты на столе, ставки сделаны!",
                 "Уравниваем ставку, смотрим следующую карту",
                 "Пас, выхожу из игры!",
                 "4Card",
@@ -50,7 +50,7 @@ public class QuestService {
         cards.add(new QuickCard());
         steps.put("4Card",new QuestStep(
                 "4Card",
-                "Четыре карты на столе, ставки сделаны!",
+                "Пять карт на столе, ставки сделаны!",
                 "Уравниваем ставку, смотрим следующую карту",
                 "Пас, выхожу из игры!",
                 "End game",
@@ -63,7 +63,7 @@ public class QuestService {
                 null,
                 null,
                 null,
-                null,null
+                null,cards.toString()
         ));
         // поражение
         steps.put("lose",new QuestStep(

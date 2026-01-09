@@ -5,7 +5,7 @@
     <title>Космический квест</title>
 </head>
 <body>
-<h1>Космический квест</h1>
+<h1>Покер</h1>
 
 <div>
     <p>Игрок: ${sessionScope.playerName}</p>

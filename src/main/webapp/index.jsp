@@ -2,11 +2,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-<title>HeloQuest (II) начало</title>
+<title>PockerQuest (II) начало</title>
 </head>
 <body>
-<h2>Пролог</h2>
-<p>Текст предистории</p>
+<h2>Классический покер</h2>
+<p>Начинаем с трех карт на столе и далее до 5 карт, у игроков на руках по 2 карты. На каждом круге игрок либо участвует в ставке либо говорит ПАС - в таком случае игра для него заканчивается</p>
 <p>Как Ваше имя?</p>
 <form action="start" method ="post">
      <label for="playerName">"Представтесь, командир:"</label><br>
